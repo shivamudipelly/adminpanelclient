@@ -1,0 +1,1 @@
+export const APIURL = "https://adminpanel-k71p.onrender.com/api";

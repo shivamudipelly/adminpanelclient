@@ -1,0 +1,151 @@
+/* General Styles */
+.coupon-management-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .coupon-management {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .loading-spinner {
+    text-align: center;
+    font-size: 18px;
+  }
+  
+  .error {
+    color: red;
+    text-align: center;
+  }
+  
+  .add-coupon-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .coupon-input {
+    padding: 8px 12px;
+    font-size: 16px;
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .add-button {
+    padding: 8px 16px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .add-button:hover {
+    background-color: #218838;
+  }
+  
+  .coupon-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .coupon-table th, .coupon-table td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ccc;
+  }
+  
+  .coupon-table th {
+    background-color: #343a40;
+    color: white;
+  }
+  
+  .toggle-btn {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .toggle-btn.active {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .toggle-btn.inactive {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .toggle-btn:hover {
+    opacity: 0.8;
+  }
+  
+  /* Responsive Styles */
+  @media screen and (max-width: 768px) {
+    .coupon-management {
+      padding: 15px;
+    }
+  
+    .add-coupon-section {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .coupon-input {
+      max-width: 100%;
+    }
+  
+    .add-button {
+      width: 100%;
+    }
+  
+    .coupon-table th, .coupon-table td {
+      font-size: 14px;
+      padding: 8px;
+    }
+  
+    .coupon-table {
+      font-size: 12px;
+      overflow-x: auto;
+      display: block;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .coupon-management-container {
+      padding: 10px;
+    }
+  
+    .coupon-input {
+      font-size: 14px;
+    }
+  
+    .add-button {
+      font-size: 14px;
+      padding: 10px;
+    }
+  
+    .coupon-table th, .coupon-table td {
+      font-size: 12px;
+      padding: 6px;
+    }
+  
+    .coupon-table {
+      font-size: 10px;
+    }
+  
+    .toggle-btn {
+      padding: 4px 8px;
+      font-size: 12px;
+    }
+  }
+  
