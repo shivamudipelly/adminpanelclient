@@ -1,46 +1,90 @@
-# Getting Started with Create React App
+# Round-Robin Coupon Distribution with Admin Panel
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 📌 Project Overview
+This web application distributes coupons to guest users in a round-robin manner while providing an admin panel for managing coupons and preventing abuse.
 
-## Available Scripts
+## 🌐 Live Deployment
+- **Live URL:** [https://adminpanelclient-t5rz.vercel.app](https://adminpanelclient-t5rz.vercel.app/)
+- **Admin Credentials:**  
+  - **Email:** shivamudipally12@gmail.com  
+  - **Password:** Shiva@701  
 
-In the project directory, you can run:
+## 🚀 Features
+### **User Side (Guest Users)**
+- Claim a coupon without logging in.
+- Coupons are assigned sequentially without repetition.
+- Abuse prevention mechanisms:
+  - **IP Tracking:** Prevents multiple claims from the same IP within a cooldown period.
+  - **Cookie-Based Tracking:** Restricts claims from the same browser session.
+- Displays messages for successful claims or restriction warnings.
 
-### `npm start`
+### **Admin Panel**
+- **Secure Login:** Only authorized admins can access the panel.
+- **Manage Coupons:** View, add, update, and delete coupons.
+- **User Claim History:** View details of users (IP/browser session) who claimed coupons.
+- **Toggle Coupon Availability:** Enable/disable specific coupons dynamically.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 🛠️ Tech Stack
+- **Frontend:** React.js,  TypeScript
+- **Backend:** Node.js, Express.js
+- **Database:** MongoDB
+- **Authentication:** JWT for admin login
+- **Deployment:** Hosted on Vercel
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 🔧 Setup Instructions
+### **Prerequisites**
+Ensure you have the following installed:
+- Node.js (v16 or later)
+- MongoDB (local or cloud)
+- Git
 
-### `npm test`
+### **Installation Steps**
+1. **Clone the Repositories**
+   ```bash
+   git clone https://github.com/shivamudipelly/adminpanelclient.git
+   git clone https://github.com/shivamudipelly/adminpanel.git
+   ```
+2. **Install Dependencies**
+   ```bash
+   cd adminpanelclient
+   npm install
+   cd ../adminpanel
+   npm install
+   ```
+3. **Set Up Environment Variables**
+   Create a `.env` file in the root directory of `adminpanel` and add the following:
+   ```
+   MONGO_URI=your_mongodb_connection_string
+   JWT_SECRET=your_secret_key
+   COOKIE_EXPIRY=86400
+   ```
+4. **Run the Application**
+   - Start the backend server:
+     ```bash
+     cd adminpanel
+     npm run server
+     ```
+   - Start the frontend:
+     ```bash
+     cd adminpanelclient
+     npm start
+     ```
+5. **Access the Application**
+   - Open `https://adminpanelclient-t5rz.vercel.app/admin/users` in the browser.
+   - Admin panel available at `/admin`.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🔒 Security Measures
+- Admin authentication with JWT.
+- Rate limiting to prevent multiple coupon claims.
+- Secure API endpoints to avoid unauthorized access.
 
-### `npm run build`
+## 📄 Documentation
+For detailed API endpoints and request formats, refer to the [API Documentation](#).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 📝 License
+This project is for educational purposes and not intended for commercial use.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
+### 📧 Contact
+For queries, reach out at shivamudipally12@gmail.com.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
